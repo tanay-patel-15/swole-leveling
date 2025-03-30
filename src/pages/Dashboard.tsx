@@ -14,6 +14,8 @@ import LevelProgress from "@/components/LevelProgress";
 import WorkoutHistory from "@/components/WorkoutHistory";
 import WorkoutForm from "@/components/WorkoutForm";
 import ExerciseList from "@/components/ExerciseList";
+import MuscleMapPanel from "@/components/MuscleMapPanel";
+import BackMusclePanel from "@/components/BackMusclePanel";
 import { useUserData } from "@/hooks/useUserData";
 import Profile from "@/components/Profile";
 
@@ -44,6 +46,16 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <Profile />
+
+        <Card className="glass-card">
+          <CardHeader className="pb-2">
+            <CardTitle>Level {userData.level}</CardTitle>
+            <CardDescription>Current progress</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <LevelProgress userData={userData} />
+          </CardContent>
+        </Card>
         
         <Card className="glass-card">
           <CardHeader className="pb-2">
@@ -93,6 +105,19 @@ const Dashboard = () => {
             </div>
           </CardContent>
         </Card>
+
+        <Card className="glass-card col-span-1 md:col-span-3">
+          <CardHeader className="pb-2">
+            <CardTitle>Muscles Trained This Week</CardTitle>
+            <CardDescription>Visualized on your body</CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-col lg:flex-row justify-center items-center gap-8">
+            <MuscleMapPanel workouts={userData.workouts} />
+            <BackMusclePanel workouts={userData.workouts} />
+          </CardContent>
+        </Card>
+
+        
       </div>
 
       <Tabs defaultValue="workout" className="w-full">
