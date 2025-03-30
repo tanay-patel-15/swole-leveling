@@ -43,7 +43,7 @@ const ExerciseList = () => {
 
   return (
     <div className="space-y-6 max-w-6xl mx-auto p-6 text-white">
-      <h1 className="text-3xl font-bold text-pink-400 text-center">Swole Leveling</h1>
+      <h1 className="text-3xl font-bold text-pink-400 text-center">Exercises</h1>
 
       {/* Select Muscle Group */}
       <div>
