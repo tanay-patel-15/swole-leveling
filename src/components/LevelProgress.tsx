@@ -11,9 +11,9 @@ const LevelProgress = ({ userData }: LevelProgressProps) => {
 
   return (
     <div className="space-y-2">
-      <Progress value={progressPercent} className="h-2 bg-muted overflow-hidden">
+      <Progress value={progressPercent} className="h-3 bg-slate-800/60 overflow-hidden progress-shine">
         <div 
-          className="h-full bg-gradient-to-r from-purple-500 to-violet-500 transition-all" 
+          className="h-full level-gradient transition-all"
           style={{ width: `${progressPercent}%` }}
         />
       </Progress>
